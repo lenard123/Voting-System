@@ -27,4 +27,4 @@
 3. open .env and configure your database
 4. import svs.sql into your database
 5. open App/Providers/AppServiceProvider.php and change the value of $base_url into your baseurl (example: http://localhost/)
-6: run "php artisan generate:key" in your command line to generate application key
+6. run "php artisan key:generate" in your command line to generate application key

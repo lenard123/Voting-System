@@ -15,7 +15,7 @@
                     <button class="btn btn-primary" v-show="status==1" onclick="location.href='{{ $base_url }}admin/result'">Realtime Result</button>
                     <button class="btn btn-danger" data-toggle="modal" data-target="#endElectionModal" v-show="status==1">Stop Election</button>
                     <!-- Election hasn't ended -->
-                    <button class="btn btn-info" v-show="status==3">View Result</button>
+                    <button class="btn btn-info" v-show="status==3" onclick="location.href='{{ $base_url }}admin/final'">View Result</button>
                     <button class="btn btn-danger" v-show="status==3" data-toggle="modal" data-target="#resetElectionModal">Reset Election</button>
 
                     <h4 v-show="status==2">Loading...</h4>
