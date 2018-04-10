@@ -13,14 +13,14 @@
 					<tr>
 						<th>ID</th>
 						<th>Name</th>
-						<th>Votes</th>
+						<th style="text-align: right;padding-right: 8px">Votes</th>
 					</tr>
 					@foreach($voteresults as $voteresult)
 					@if($voteresult->POSITION==$position->POSITION)
 					<tr>
 						<td>{{ $voteresult->ID }}</td>
 						<td>{{ $voteresult->NAME }}</td>
-						<td>{{ $voteresult->VOTES }}</td>
+						<td style="text-align: right;padding-right: 15px">{{ $voteresult->VOTES }}</td>
 					</tr>
 					@endif
 					@endforeach
