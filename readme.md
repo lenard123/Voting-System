@@ -49,15 +49,15 @@
 
 - open Console and run "composer install" and "npm install" (without quote)
 - create a database
-- copy .env.example to .env
-- setup your database
+- copy .env.example to .env and setup your database
 - run "php artisan key:generate" to generate application key
-- run "php artisan passport:install" to create encryption key needed to passport
 - run "php artisan storage:link"
-- run "php artisan migrate --seed" without quote to import table the default user for admin is 
-
-	email: lenard.mangayayam@voting-system.com
-	password: admin (feel free to change it if you want)
-
+- run "php artisan migrate --seed" without quote to import table 
+- run "php artisan passport:install" to create encryption key needed to passport
 - run "npm run dev" to compile Vue Components
 - finally run "php artisan serve" to start application.
+
+### Note
+
+email: lenard.mangayayam@voting-system.com
+password: admin (feel free to change it if you want)
