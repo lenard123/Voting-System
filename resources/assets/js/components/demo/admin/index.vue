@@ -46,7 +46,7 @@
 							</a>
 							<ul class="dropdown-menu">
 
-								<router-link :to="{name:'Update Account'}" tag="li">
+								<router-link :to="{name:'Update Account'}" tag="li" exact>
 									<a href="#">Update Account</a>
 								</router-link>
 
