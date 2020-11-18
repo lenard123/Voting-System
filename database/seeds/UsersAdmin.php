@@ -14,9 +14,9 @@ class UsersAdmin extends Seeder
     {
         $user = new User();
         $user->id = 1;
-        $user->name = 'Lenard Mangay-ayam';
-        $user->email = 'lenard.mangayayam@voting-system.com';
-        $user->password = bcrypt('admin');
+        $user->name = env('USER_NAME','Lenard Mangay-ayam');
+        $user->email = env('USER_EMAIL','lenard.mangayayam@voting-system.com');
+        $user->password = bcrypt(env('USER_PASS','admin');
         $user->save();
     }
 }
