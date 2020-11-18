@@ -45,18 +45,26 @@
 - Composer (To install Laravel and Other Dependencies)
 - NPM (To Compile Vue Components)
 
-## Installation
+## Setting UP
 
-- open Console and run "composer install" (without quote)
-- create a database
-- run "php artisan storage:link"
-- run "php artisan migrate --seed" without quote to import table 
-- run "php artisan passport:install" to create encryption key needed to passport
-- finally run "php artisan serve" to start application.
+1. Run 'git clone https://github.com/lenard123/Voting-System'
+2. Run 'cd Voting-System'
+3. Run 'cp .env.example .env' or rename .env.example to .env
+4. Open .env file and Setup your database connection
+5. Run 'php artisan migrate --seed'
+6. Run 'php artisan storage:link'
+7. Run 'php artisan key:generate'
+8. Run 'php artisan passport:install'
+9. Finally run 'php artisan serve'
 
 ### Note
 
 The Default user for admin is:
 
 email: lenard.mangayayam@voting-system.com
-password: admin (feel free to change it if you want)
+password: admin
+
+You can change it in .env file
+
+### System Demo
+You can watch the System Demo [here](https://youtu.be/dsEoONiovdA).
