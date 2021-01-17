@@ -18,7 +18,7 @@
     "laravel-mix": "^2.0"
   },
   "dependencies": {
-    "axios": "^0.18.1",
+    "axios": "^0.21.1",
     "bootstrap-notify": "^3.1.3",
     "font-awesome": "^4.7.0",
     "jquery": "^3.5.1",
