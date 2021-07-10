@@ -60,4 +60,29 @@ class Util extends Controller
     {
     	return ($image == config('app.nominee_image'));
     }
+
+
+    public static function getCloudinaryConfig()
+    {
+        $config = new \Cloudinary\Configuration\Configuration();
+        $config->cloud->cloudName = config('app.cloudinary_cloud_name');
+        $config->cloud->apiKey = config('app.cloudinary_api_key');
+        $config->cloud->apiSecret = config('app.cloudinary_api_secret');
+        $config->url->secure = true; 
+        return $config;
+    }
+
+
+    public static function uploadFileToCloudinary($request)
+    {
+        $config = Util::getCloudinaryConfig();
+        $cloudinary = new \Cloudinary\Cloudinary($config);
+        $uploadApi = $cloudinary->uploadApi();
+
+        $image = base64_encode(file_get_contents($request->file('image')));
+        $result = $uploadApi->upload('data:image/gif;base64,'.$image, ['folder' => config('app.cloudinary_folder')]);
+
+        return $result["url"];
+    }
+
 }
