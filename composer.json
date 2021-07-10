@@ -6,10 +6,13 @@
     "type": "project",
     "require": {
         "php": ">=5.6.4",
+        "cloudinary/cloudinary_php": "^2.3",
         "doctrine/dbal": "^2.5",
+        "guzzlehttp/guzzle": "^6.3",
         "laravel/framework": "5.4.*",
         "laravel/passport": "^4.0",
-        "laravel/tinker": "~1.0"
+        "laravel/tinker": "~1.0",
+        "lcobucci/jwt": "3.3"
     },
     "require-dev": {
         "fzaninotto/faker": "~1.4",
