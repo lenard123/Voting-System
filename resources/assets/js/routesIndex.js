@@ -9,6 +9,7 @@ import AdminLogin from './components/demo/admin/login.vue';
 import AdminIndex from './components/demo/admin/index.vue';
 
 import ManageElection from './components/demo/admin/home/home.vue';
+import FinalResult from './components/demo/admin/home/final.vue';
 
 const default_component = {
 	template: '<div>Not found: {{ $route.path }}</div>'
@@ -57,6 +58,13 @@ export default [
 		path: '/admin',
 		component: AdminIndex,
 		children: [
+
+			{
+				path: 'result/:election_id',
+				component: FinalResult,
+				name: 'Election Result'
+			},
+
 			{
 				path: '',
 				component: ManageElection,
