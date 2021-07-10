@@ -80,14 +80,18 @@ class Util extends Controller
 
     public static function uploadFileToCloudinary($request)
     {
-        $config = Util::getCloudinaryConfig();
-        $cloudinary = new \Cloudinary\Cloudinary($config);
-        $uploadApi = $cloudinary->uploadApi();
+        try{
+            $config = Util::getCloudinaryConfig();
+            $cloudinary = new \Cloudinary\Cloudinary($config);
+            $uploadApi = $cloudinary->uploadApi();
 
-        $image = base64_encode(file_get_contents($request->file('image')));
-        $result = $uploadApi->upload('data:image/gif;base64,'.$image, ['folder' => config('app.cloudinary_folder')]);
+            $image = base64_encode(file_get_contents($request->file('image')));
+            $result = $uploadApi->upload('data:image/gif;base64,'.$image, ['folder' => config('app.cloudinary_folder')]);
 
-        return $result["url"];
+            return $result["url"];
+        } catch (Exception $exception) {
+            return config('app.cloudinary_image_error');
+        }
     }
 
 }
