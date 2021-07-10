@@ -46,9 +46,14 @@ class Util extends Controller
      */
     public static function getImagePath(Request $request, $directory, $default_image, $filename=null)
     {
-    	$filename = $filename ?: time().' .jpg';
-    	if (empty($request->image)) return $default_image;
-		return $request->file('image')->storeAs($directory, $filename);
+        if (config('app.cloudinary_enabled')) {
+            return Util::uploadFileToCloudinary($request);
+        } else {
+            $filename = $filename ?: time().' .jpg';
+            if (empty($request->image)) return $default_image;
+            return $request->file('image')->storeAs($directory, $filename);
+        }
+
     }
 
     /** 
