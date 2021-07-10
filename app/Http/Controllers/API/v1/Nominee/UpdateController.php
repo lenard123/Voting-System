@@ -45,9 +45,7 @@ class UpdateController extends Controller
     {
     	$nominee = Nominee::find($id);
     	$default_image = $nominee->image;
-    	
-    	$new['image'] = Util::getImagePath($request, config('app.nominee_directory'), $default_image);
-    	
+    	    	
     	$nominee->name = $request->name;
     	$nominee->course = $request->course;
     	$nominee->student_id = $request->student_id;
