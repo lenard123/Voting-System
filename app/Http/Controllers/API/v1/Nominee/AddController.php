@@ -46,7 +46,8 @@ class AddController extends Controller
     public function insertNominee ($request) 
     {
     	$nominee = $request->all();
-    	$nominee['image'] = Util::getImagePath($request, config('app.nominee_directory'), config('app.nominee_image'));
+        $default_image = config('app.cloudinary_enabled') ? config('app.cloudinary_image_default') : config('app.nominee_image');
+    	$nominee['image'] = Util::getImagePath($request, config('app.nominee_directory'), $default_image);
     	$nominee['election_id'] = Util::getCurrentElection();
     	Nominee::create($nominee);
     }
