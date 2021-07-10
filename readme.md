@@ -30,7 +30,7 @@
 
 ## Language Used
 
-- PHP 5
+- PHP 5 (Note: This is not working on PHP v8 or higher)
 - Laravel 5.4 (Php Framework)
 - HTML
 - CSS
@@ -40,7 +40,7 @@
 
 ## Requirements
 
-- PHP 5 or higher
+- PHP 5 or higher ()
 - MySQL
 - Composer (To install Laravel and Other Dependencies)
 - NPM (To Compile Vue Components)
