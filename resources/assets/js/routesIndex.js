@@ -9,6 +9,7 @@ import AdminLogin from './components/demo/admin/login.vue';
 import AdminIndex from './components/demo/admin/index.vue';
 
 import ManageElection from './components/demo/admin/home/home.vue';
+import ManageElectionIndex from './components/demo/admin/home/index.vue';
 import FinalResult from './components/demo/admin/home/final.vue';
 
 const default_component = {
@@ -68,7 +69,13 @@ export default [
 			{
 				path: '',
 				component: ManageElection,
-				name: 'Admin Home' 
+				children: [
+					{
+						path: '',
+						component: ManageElectionIndex,
+						name: 'Admin Home'
+					}
+				]
 			}
 		]
 	}
