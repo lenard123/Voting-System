@@ -45,12 +45,13 @@ class Util extends Controller
      * @return 	{String}	$image_path
      */
     public static function getImagePath(Request $request, $directory, $default_image, $filename=null)
-    {
-        if (config('app.cloudinary_enabled')) {
+    {        
+        if (empty($request->image)){
+            return $default_image;
+        }else if (config('app.cloudinary_enabled')) {
             return Util::uploadFileToCloudinary($request);
         } else {
             $filename = $filename ?: time().' .jpg';
-            if (empty($request->image)) return $default_image;
             return $request->file('image')->storeAs($directory, $filename);
         }
 
@@ -89,7 +90,7 @@ class Util extends Controller
             $result = $uploadApi->upload('data:image/gif;base64,'.$image, ['folder' => config('app.cloudinary_folder')]);
 
             return $result["url"];
-        } catch (Exception $exception) {
+        } catch (\Throwable $exception) {
             return config('app.cloudinary_image_error');
         }
     }
