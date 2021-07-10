@@ -55,7 +55,8 @@
 6. Run `php artisan migrate --seed`
 7. Run `php artisan storage:link`
 8. Run `php artisan key:generate`
-9. Finally run `php artisan serve`
+9. Run `php artisan passport:install`
+10. Finally run `php artisan serve`
 
 ### Note
 
