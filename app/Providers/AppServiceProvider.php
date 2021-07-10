@@ -20,6 +20,10 @@ class AppServiceProvider extends ServiceProvider
             $password = DB::table($parameters[0])->where('id', $parameters[2])->value($parameters[1]);
             return Hash::check($value, $password);
         });
+
+        if(config('app.env') === 'production') {
+            \URL::forceScheme('https');
+        }
     }
 
     /**
