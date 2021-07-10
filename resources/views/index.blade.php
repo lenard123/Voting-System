@@ -18,7 +18,7 @@
 	window.config = {
 		"API":"{{ url('api/v1') }}/", //URL OF YOUR API LOCATED
 		"baseURL":"{{ url('') }}/", //URL OF YOUR WEBSITE
-		"storageURL":"{{ url('storage') }}/", //URL WHERE YOUR IMAGES and OTHER FILEs stored
+		"storageURL":"{{ config('app.cloudinary_enabled') ? '' : url('storage') }}/", //URL WHERE YOUR IMAGES and OTHER FILEs stored
 		"debug": {{ env('APP_DEBUG') }}
 	}
 </script>
