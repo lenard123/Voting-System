@@ -12,6 +12,14 @@ return [
     'nominee_image' => 'images/nominee/default.jpg',
     'nominee_directory' => 'images/nominee',
 
+    'cloudinary_enabled' => env('CLOUDINARY_ENABLED', false),
+    'cloudinary_folder' => env('CLOUDINARY_FOLDER'),
+    'cloudinary_image_error' => env('CLOUDINARY_IMAGE_ERROR'),
+    'cloudinary_image_default' => env('CLOUDINARY_IMAGE_DEFAULT'),
+    'cloudinary_cloud_name' => env('CLOUDINARY_CLOUD_NAME'),
+    'cloudinary_api_key' => env('CLOUDINARY_API_KEY'),
+    'cloudinary_api_secret' => env('CLOUDINARY_API_SECRET'),
+
     /*
     |--------------------------------------------------------------------------
     | Application Name
