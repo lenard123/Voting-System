@@ -9,6 +9,7 @@ Vue.use(VueRouter);
 Vue.mixin(Util);
 
 const router = new VueRouter({
+	mode: 'history',
 	linkActiveClass: 'active',
 	routes
 });
