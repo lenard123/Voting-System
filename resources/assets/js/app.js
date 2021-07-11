@@ -1,6 +1,6 @@
 require('./bootstrap.js');
-
-import VueRouter from 'vue-router';
+//window.VueRouter = require('vue-router').default;
+//import VueRouter from 'vue-router';
 import Util from './util.js';
 import routes from './routesIndex.js';
 
