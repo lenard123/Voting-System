@@ -5,7 +5,7 @@
 		<div class="form-group">
 			<button class="btn btn-success" v-if="data.election.status == 1" @click="util.showModal('#start-election-modal')">Start Election</button>
 			
-			<router-link :to="{name: 'Result'}" class="btn btn-info" v-if="data.election.status == 2">
+			<router-link :to="{name: 'Current Result'}" class="btn btn-info" v-if="data.election.status == 2">
 				View Results
 			</router-link>
 			

@@ -108,7 +108,7 @@ export default [
 					{
 						path: 'result',
 						component: ManageElectionResult,
-						name: 'Result'
+						name: 'Current Result'
 					}
 
 				]
