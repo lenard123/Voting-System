@@ -6,7 +6,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
-	<link rel="stylesheet" href="{{ asset('css/app.css') }}">
+	<link rel="stylesheet" href="/css/app.css">
 
 
 </head>
@@ -20,9 +20,9 @@
 
 <script>
 	window.config = {
-		"API":"{{ url('api/v1') }}/", //URL OF YOUR API LOCATED
-		"baseURL":"{{ url('') }}/", //URL OF YOUR WEBSITE
-		"storageURL":"{{ config('app.cloudinary_enabled') ? '' : url('storage/') }}", //URL WHERE YOUR IMAGES and OTHER FILEs stored
+		"API":"/api/v1/", //URL OF YOUR API LOCATED
+		"baseURL":"/", //URL OF YOUR WEBSITE
+		"storageURL":"{{ config('app.cloudinary_enabled') ? '' : '/storage/' }}", //URL WHERE YOUR IMAGES and OTHER FILEs stored
 		"debug": {{ env('APP_DEBUG') }}
 	}
 </script>
@@ -36,6 +36,6 @@
 <script src="https://cdn.jsdelivr.net/npm/jquery-flot@0.8.3/jquery.flot.pie.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment@2.29.1/moment.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/vue-router@3.4.9/dist/vue-router.min.js"></script>
-<script src="{{ asset('js/app.js') }}"></script>
+<script src="/js/app.js"></script>
 </body>
 </html>

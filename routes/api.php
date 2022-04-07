@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,10 +14,10 @@ use Illuminate\Http\Request;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
-});
-
+// Route::middleware('auth:api')->get('/user', function (Request $request) {
+//     return $request->user();
+// });
+Route::get('/user', 'Auth\UserController@index')->middleware('auth:api');
 
 
 Route::prefix('v1')->group(function(){ //Version 1 of my Rest API
@@ -85,10 +86,4 @@ Route::prefix('v1')->group(function(){ //Version 1 of my Rest API
 
 });
 
-use Illuminate\Support\Facades\Auth;
-Route::get('test', function () {
-	$election = \App\Election::find(9);
-	$election->status = 1;
-	$election->save();
-	return 	\App\Election::find(9);
-});
+
