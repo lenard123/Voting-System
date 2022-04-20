@@ -44,6 +44,7 @@
 - MySQL
 - Composer (To install Laravel and Other Dependencies)
 - NPM (To Compile Vue Components)
+- NodeJs (v14 to Compile Vue Components)
 
 ## Setting UP
 
