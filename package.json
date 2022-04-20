@@ -1,19 +1,21 @@
 {
   "private": true,
   "scripts": {
-    "build": "babel resources/assets/js -d resources/assets/lib",
-    "dev": "npm run development",
-    "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --watch --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "watch-poll": "npm run watch -- --watch-poll",
-    "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
-    "prod": "npm run production",
-    "production": "cross-env NODE_ENV=production node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js"
+    "development": "mix",
+    "watch": "mix watch",
+    "watch-poll": "mix watch -- --watch-options-poll=1000",
+    "hot": "mix watch --hot",
+    "production": "mix --production"
   },
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-plugin-syntax-dynamic-import": "^6.18.0",
     "cross-env": "^5.2.1",
-    "laravel-mix": "^2.0"
+    "laravel-mix": "^6.0.43",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.50.1",
+    "sass-loader": "^12.1.0",
+    "vue-loader": "^15.9.7",
+    "vue-template-compiler": "^2.6.14"
   }
 }
