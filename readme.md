@@ -2,8 +2,6 @@
 
 ## Features
 
-- SPA
-
 ### Admin Panel
 
 - Login (API - Authentication / Passport)
@@ -40,31 +38,59 @@
 
 ## Requirements
 
-- PHP 5 or higher ()
+- PHP 5 or higher
 - MySQL
 - Composer (To install Laravel and Other Dependencies)
-- NPM (To Compile Vue Components)
-- NodeJs (v14 to Compile Vue Components)
+- NPM - To Compile Vue Components (optional)
+- NodeJs - v14 to Compile Vue Components (optional)
 
 ## Setting UP
 
-1. Run `git clone https://github.com/lenard123/Voting-System`
-2. Run `cd Voting-System`
-3. Run `cp .env.example .env` or rename .env.example to .env
-4. Open .env file and Setup your database connection
-5. Run `composer install`
-6. Run `php artisan migrate --seed`
-7. Run `php artisan storage:link`
-8. Run `php artisan key:generate`
-9. Run `php artisan passport:install`
-10. Finally run `php artisan serve`
+```shell
+# First Clone the repository
+git clone https://github.com/lenard123/Voting-System
+
+# Navigate to the project directory
+cd Voting-System
+
+# Install PHP Dependencies using composer
+composer install
+
+# Copy .env.example to .env
+
+# (Windows)
+copy .env.example .env
+# (On Linux)
+cp .env.example .env
+
+# Before you proceed to the next
+# configure your database first
+# in the .env file
+
+# Generate Application key
+php artisan key:generate
+
+# Link storage
+php artisan storage:link
+
+# Run database migration
+#   this command will automatically import
+#   the database tables and default data
+php artisan migrate:fresh --seed
+
+# Install Passport keys
+php artisan passport:install
+
+# Finally, you can now serve the application
+php artisan serve
+# You can now view the system on http://localhost:8000
+```
 
 ### Note
 
 The Default user for admin is:
-
-email: lenard.mangayayam@voting-system.com
-password: admin
+- email: lenard.mangayayam@voting-system.com
+- password: admin
 
 You can change it in .env file
 
